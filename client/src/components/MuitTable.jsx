@@ -20,7 +20,7 @@ export const MuiTable = () => {
             {tableData.map(row => (<TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                         <TableCell sx={{bgcolor: 'secondary.main'}} align='center'>{row.name}</TableCell>
                         <TableCell sx={{bgcolor: 'secondary.main' }} align='center'>{row.age}</TableCell>
-                        <TableCell sx={{bgcolor: 'secondary.main' }} align='center'>{row.weight} .lbs</TableCell>
+                        <TableCell sx={{bgcolor: 'secondary.main' }} align='center'>{row.weight} .lBbs</TableCell>
                         <TableCell sx={{bgcolor: 'secondary.main' }} align='center'>{row.A1C}</TableCell>
                     </TableRow>))}
         </TableBody>

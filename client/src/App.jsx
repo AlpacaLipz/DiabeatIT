@@ -67,9 +67,9 @@ function App() {
     <Box>
       <MuiNavBar  />
       
-        <BloodSugarLog />
+        {/* <BloodSugarLog /> */}
       
-        {/* <Dashboard /> */}
+        <Dashboard />
       <MuiBottomNavigation />
     </Box>
     </ThemeProvider>
