@@ -5,6 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 export const MuiNavBar = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    
     const handleClick = (e) => {
         setAnchorEl(e.currentTarget);
     };
@@ -20,7 +21,6 @@ export const MuiNavBar = () => {
           Diabeat It
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button color="inherit">Log-It</Button>
           <Button color="inherit" id="resources-button" onClick={handleClick} aria-control={open ? "resources-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined} endIcon={<KeyboardArrowDownIcon />}>
             Options
           </Button>
@@ -34,8 +34,8 @@ export const MuiNavBar = () => {
         }} transformOrigin={{
             vertical: 'top',
             horizontal: 'right'
-        }}>
-          <MenuItem onClick={handleClose}>Edit User</MenuItem>
+        }} >
+          <MenuItem onClick={handleClose}>Chart It</MenuItem>
           <MenuItem onClick={handleClose}>Dashboard</MenuItem>
         </Menu>
       </Toolbar>
