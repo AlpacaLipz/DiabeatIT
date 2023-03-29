@@ -1,4 +1,6 @@
 import React from 'react';
+import {Routes, Route, Link} from 'react-router-dom'
+
 import './App.css';
 import { MuiNavBar } from './components/MuiNavBar';
 import { MuiBottomNavigation } from './components/MuiBottomNavigation';
@@ -63,16 +65,18 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
     <Box>
-      <MuiNavBar  />
-      
-        <BloodSugarLog />
-      
-        {/* <Dashboard /> */}
-      <MuiBottomNavigation />
+      <ThemeProvider theme={theme}>
+      <Box>
+        <MuiNavBar  />
+        
+          <BloodSugarLog />
+        
+          {/* <Dashboard /> */}
+        <MuiBottomNavigation />
+      </Box>
+      </ThemeProvider>
     </Box>
-    </ThemeProvider>
   );
 }
 export default App;
