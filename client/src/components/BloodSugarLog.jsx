@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import { Container, Box, Button, TextField, Typography, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
+import axios from 'axios';
+
 
 export const BloodSugarLog = () => {
-  const [readings, setReadings] = useState([]);
 
-  const handleAddReading = () => {
-    const time = new Date().toLocaleString();
-    const reading = document.getElementById('blood-sugar-reading').value.trim();
+  const [date, setDate] = useState('');
+  const [dayNight, setDayNight] = useState('');
+  const [bloodSugar, setBloodSugar] = useState('');
 
-    if (reading !== '') {
-      setReadings([...readings, { time, reading }]);
-      document.getElementById('blood-sugar-reading').value = '';
-    }
-  };
+  const handleAddReading = (e) => {
+    e.preventDefault();
+
+    axios
+      .post('http://localhost:8000/api/logs', {
+        bloodSugar, 
+        date,
+        dayNight,
+      })
+      .then((response) => {
+        console.log(date, dayNight, bloodSugar);
+        (console.log(response.data))
+      })
+      .catch((err) => console.log("This is the Add Reading error: ", err));
+    };
 
   return (
     
@@ -31,6 +42,7 @@ export const BloodSugarLog = () => {
         variant="outlined"
         margin="normal"
         sx={{mt:5}}
+        onChange={(e) => {setDate(e.target.value)}}
       />
       <TextField sx={{mt:5}}
         id="blood-sugar-reading"
@@ -42,6 +54,7 @@ export const BloodSugarLog = () => {
         variant="outlined"
         margin="normal"
         required
+        onChange={(e) => {setDayNight(e.target.value)}}
       />
       <TextField
         id="blood-sugar-reading"
@@ -53,6 +66,7 @@ export const BloodSugarLog = () => {
         variant="outlined"
         margin="normal"
         sx={{mt:5}}
+        onChange={(e) => {setBloodSugar(e.target.value)}}
       />
       <Button sx={{mt: 5, ml: 5 , bgcolor: '#DB3EB1'}} variant="contained" onClick={handleAddReading}>
         Add Reading
@@ -61,4 +75,3 @@ export const BloodSugarLog = () => {
     </Box>
   );
 };
-

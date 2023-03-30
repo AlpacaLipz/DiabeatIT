@@ -3,10 +3,11 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { MuiNavBar } from "./components/MuiNavBar";
 import { MuiBottomNavigation } from "./components/MuiBottomNavigation";
-import { ThemeProvider, Box, createTheme, colors } from "@mui/material";
+import { ThemeProvider, Box, createTheme, colors, Typography } from "@mui/material";
 import { Dashboard } from "./views/Dashboard";
 import { CreateLog } from "./views/CreateLog";
 import { UpdateLog } from "./views/UpdateLog";
+import {LoginView} from "./views/LoginView"
 
 const theme = createTheme({
   palette: {
@@ -57,11 +58,19 @@ const theme = createTheme({
 });
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({});
+
+  const loginUser = (user) => {
+    setCurrentUser(user);
+    console.log(currentUser);
+  };
   return (
     <Box>
+      
       <ThemeProvider theme={theme}>
         <MuiNavBar />
         <Routes>
+          <Route path='/logs/login' element={<LoginView updateUser={loginUser} />}></Route>
           <Route path="/logs" element={<Dashboard />}></Route>
           <Route path="/logs/new" element={<CreateLog />}></Route> 
           {/* <Route path="/logs/:id/edit" element={<UpdateLog />}></Route> */}

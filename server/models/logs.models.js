@@ -8,12 +8,11 @@ const LogsSchema = new mongoose.Schema(
             required: [true, 'Please enter a number' ],
             minLength: [1, 'Must be at least 1 digit']
         },
-        date: { 
+        date: {
             type: Date,
             required: [true, 'Date required' ],
         }, 
-        notes: { type: String
-        // No requirements for user notes - User Discretion
+        dayNight: { type: String
         },
     },
     { timestamps: true }
