@@ -15,7 +15,7 @@ import {
 import { Dashboard } from "./views/Dashboard";
 import { CreateLog } from "./views/CreateLog";
 import { UpdateLog } from "./views/UpdateLog";
-// import { LoginView } from "./views/LoginView";
+import { LoginView } from "./views/LoginView";
 
 
 const theme = createTheme({
@@ -67,30 +67,15 @@ const theme = createTheme({
 });
 
 function App() {
-<<<<<<< HEAD
-
-
-=======
     /* global google */
 
->>>>>>> 19806ece37c09eb801ced61eb7f29f5e43818965
   return (
     <Box>
       <ThemeProvider theme={theme}>
         <MuiNavBar />
-<<<<<<< HEAD
- 
-        <Routes>
-          {/* <Route
-            path="/logs/login"
-            element={<LoginView updateUser={loginUser} />}> */}
-
-            {/* </Route> */}
-=======
 
         <Routes>
           <Route path='/logs/login' element={<LoginView />}></Route>
->>>>>>> 19806ece37c09eb801ced61eb7f29f5e43818965
           <Route path="/logs" element={<Dashboard />}></Route>
           <Route path="/logs/new" element={<CreateLog />}></Route>
           {/* <Route path="/logs/:id/edit" element={<UpdateLog />}></Route> */}
