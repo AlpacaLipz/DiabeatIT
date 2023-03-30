@@ -4,6 +4,7 @@ import {
   Box,
   Avatar,
   Button,
+  Container,
   TableContainer,
   Table,
   TableHead,
@@ -54,23 +55,27 @@ const Login = (props) => {
 
   return (
     <Box>
-      <Box id="signInDiv"></Box>
-
+      <Container>
+      <Box id="signInDiv">
+      </Box>
       {user && (
-        <Box>
-          <Avatar src={user.picture} />
-          <Typography variant="subtitle1">{user.name}</Typography>
+        <Box >
+          <Box>
+          <img src={user.picture} />
+          </Box>
+          <Typography variant="sub1">{user.name}</Typography>
         </Box>
       )}
       {Object.keys(user).length != 0 && (
         <Button
-          sx={{ mt: 5, ml: 5, bgcolor: "#DB3EB1" }}
+          sx={{ mt: 5, bgcolor: "#DB3EB1" }}
           variant="contained"
           onClick={(e) => handleSignOut(e)}
         >
           Sign Out
         </Button>
       )}
+      </Container>
     </Box>
   );
 };

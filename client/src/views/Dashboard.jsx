@@ -6,20 +6,10 @@ import { MuiTable } from "../components/MuitTable";
 import Login from "../components/Login";
 
 export const Dashboard = () => {
-  const [currentUser, setCurrentUser] = useState({});
 
-  const loginUser = (user) => {
-    setCurrentUser(user);
-    console.log(currentUser);
-  };
   return (
     <Box>
       <MuiTable />
-      <Box sx={{mt: 30}}>
-        <Card sx={{width: '40%', height: 'auto'}}>
-          <Login updateUser={loginUser} />
-        </Card>
-      </Box>
     </Box>
     
   );

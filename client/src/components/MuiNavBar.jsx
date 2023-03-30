@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, } from "@mui/material";
 import MonitorHeartSharpIcon from '@mui/icons-material/MonitorHeartSharp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -12,6 +13,11 @@ export const MuiNavBar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/logs/login`; 
+      navigate(path);
+    }
     return (<AppBar position="static" sx={{bgcolor: 'secondary.main',}}>
       <Toolbar>
         <IconButton size="large" edge='start' color="inherit" aria-label="logo">
@@ -24,7 +30,7 @@ export const MuiNavBar = () => {
           <Button color="inherit" id="resources-button" onClick={handleClick} aria-control={open ? "resources-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined} endIcon={<KeyboardArrowDownIcon />}>
             Options
           </Button>
-          <Button color="inherit">Login</Button>
+          <Button onClick={routeChange} color="inherit">Login</Button>
         </Stack>
         <Menu id="resources-menu" anchorEl={anchorEl} open={open} MenuListProps={{
             'aria-labelledby': 'resources-button'
