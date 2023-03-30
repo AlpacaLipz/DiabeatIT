@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { BottomNavigation, BottomNavigationAction, } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonIcon from '@mui/icons-material/Person';
+import UpgradeIcon from '@mui/icons-material/Upgrade';
 export const MuiBottomNavigation = () => {
     const [value, setValue] = useState(0);
-    return (<BottomNavigation sx={{bgcolor: 'secondary.main', width: '100%', position: 'absolute', bottom: 0 }} value={value} onChange={(e, newValue) => { setValue(newValue); }} showLabels>
-      <BottomNavigationAction label='Home' icon={<HomeIcon />}/>
-      <BottomNavigationAction label='Log' icon={<FavoriteIcon />}/>
-      <BottomNavigationAction label='User' icon={<PersonIcon />}/>
-    </BottomNavigation>);
+    return (<Box><BottomNavigation sx={{bgcolor: 'secondary.main', width: '100%', position: 'absolute', bottom: 0 }} value={value} onChange={(e, newValue) => { setValue(newValue); }} showLabels>
+      <BottomNavigationAction href='/logs' label='Home' icon={<HomeIcon />}/>
+      <BottomNavigationAction href='/logs/new' label='Log' icon={<FavoriteIcon />}/>
+      <BottomNavigationAction href='' label='Update' icon={<UpgradeIcon />}/>
+    </BottomNavigation>
+    </Box>
+    );
 };

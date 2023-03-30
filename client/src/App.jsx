@@ -1,15 +1,12 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Routes, Route, Link } from "react-router-dom";
-
 import "./App.css";
 import { MuiNavBar } from "./components/MuiNavBar";
 import { MuiBottomNavigation } from "./components/MuiBottomNavigation";
 import { ThemeProvider, Box, createTheme, colors } from "@mui/material";
 import { Dashboard } from "./views/Dashboard";
-
-
 import { CreateLog } from "./views/CreateLog";
-import { UpdateUser } from "./views/UpdateUser";
+import { UpdateLog } from "./views/UpdateLog";
 
 const theme = createTheme({
   palette: {
@@ -67,7 +64,7 @@ function App() {
         <Routes>
           <Route path="/logs" element={<Dashboard />}></Route>
           <Route path="/logs/new" element={<CreateLog />}></Route> 
-          <Route path="/logs/:id/edit" element={<UpdateUser />}></Route> 
+          {/* <Route path="/logs/:id/edit" element={<UpdateLog />}></Route> */}
         </Routes>
         <MuiBottomNavigation />
       </ThemeProvider>

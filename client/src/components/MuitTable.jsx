@@ -10,11 +10,10 @@ export const MuiTable = () => {
     
     <Table aria-label='simple table' > 
         <TableHead sx={{bgcolor: 'secondary.main'}}>
-            <TableCell  align='center'>Name</TableCell>
-            <TableCell  align='center'>Age</TableCell>
-            <TableCell  align='center'>Weight</TableCell>
-            <TableCell  align='center'>A1C</TableCell>
-
+            <TableCell  align='center'>Date</TableCell>
+            <TableCell  align='center'>Blood Sugar</TableCell>
+            <TableCell  align='center'>Update</TableCell>
+            <TableCell  align='center'>Delete</TableCell>
         </TableHead>
         <TableBody>
             {tableData.map(row => (<TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
@@ -31,8 +30,8 @@ export const MuiTable = () => {
 };
 const tableData = [
   {
-      "name": "Alpaca Jackson",
-      "age": 69,
+      "date": "Alpaca Jackson",
+      "": 69,
       "weight": 420,
       "A1C": "O-",
       "_id": "1"
