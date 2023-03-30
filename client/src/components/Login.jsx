@@ -58,14 +58,7 @@ const Login = (props) => {
       <Container>
       <Box id="signInDiv">
       </Box>
-      {user && (
-        <Box >
-          <Box>
-          <img src={user.picture} />
-          </Box>
-          <Typography variant="sub1">{user.name}</Typography>
-        </Box>
-      )}
+      <Box>
       {Object.keys(user).length != 0 && (
         <Button
           sx={{ mt: 5, bgcolor: "#DB3EB1" }}
@@ -74,7 +67,7 @@ const Login = (props) => {
         >
           Sign Out
         </Button>
-      )}
+      )}</Box>
       </Container>
     </Box>
   );
