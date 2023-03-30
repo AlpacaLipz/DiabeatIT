@@ -46,7 +46,7 @@ export const BloodSugarLog = () => {
       />
       <TextField sx={{mt:5}}
         id="blood-sugar-reading"
-        label="Am - Pm "
+        label="Notes"
         type="text"
         InputLabelProps={{
           shrink: true,

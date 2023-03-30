@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import {Box, Card} from '@mui/material'
 import Login from '../components/Login'
 import { useContext } from 'react';
-// import { AuthContext } from './AuthContext';
+
 
 export const LoginView = () => {
-  const { setIsLoggedIn } = useContext('AuthContext');
+  const { setIsLoggedIn } = useContext('');
 
   const handleLogin = () => {
     // code to authenticate user

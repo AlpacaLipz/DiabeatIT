@@ -38,7 +38,7 @@ export const MuiTable = () => {
         <TableHead sx={{bgcolor: 'secondary.main'}}>
             <TableCell  align='center'>Date</TableCell>
             <TableCell  align='center'>Blood Sugar</TableCell>
-            <TableCell  align='center'>AM/PM</TableCell>
+            <TableCell  align='center'>Notes</TableCell>
             <TableCell  align='center'>Delete</TableCell>
         </TableHead>
         <TableBody>
