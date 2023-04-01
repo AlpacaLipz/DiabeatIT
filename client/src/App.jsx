@@ -14,8 +14,8 @@ import {
 } from "@mui/material";
 import { Dashboard } from "./views/Dashboard";
 import { CreateLog } from "./views/CreateLog";
-import { UpdateLog } from "./views/UpdateLog";
-import { LoginView } from "./views/LoginView";
+
+
 
 
 const theme = createTheme({
@@ -75,12 +75,11 @@ function App() {
         <MuiNavBar />
 
         <Routes>
-          <Route path='/logs/login' element={<LoginView />}></Route>
           <Route path="/logs" element={<Dashboard />}></Route>
           <Route path="/logs/new" element={<CreateLog />}></Route>
           {/* <Route path="/logs/:id/edit" element={<UpdateLog />}></Route> */}
         </Routes>
-        <MuiBottomNavigation />
+        <MuiBottomNavigation/>
       </ThemeProvider>
     </Box>
   );

@@ -6,6 +6,8 @@ import { BloodSugarLog } from '../components/BloodSugarLog';
 
 
 export const CreateLog = () => {
+
+  
   return (
     <Box>
       <BloodSugarLog />
